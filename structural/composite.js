@@ -89,6 +89,13 @@ class Composite extends Component {
 
 const tree = new Composite('root');
 tree.addChild(new Leaf('left'));
+const right = new Composite('right');
+tree.addChild(right);
+right.addChild(new Leaf('right-left'));
+const rightMid = new Composite('right-middle');
+right.addChild(rightMid);
+right.addChild(new Leaf('right-right'));
+rightMid.addChild(new Leaf('left-end'));
+rightMid.addChild(new Leaf('right-end'));
 
 console.log(Component.logTreeStructure(tree));
-//console.log(tree.getType());
